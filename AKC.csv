@@ -1,4 +1,4 @@
-breed, class
+breed, group
 affenpinscher, toy
 afghan hound, hound
 airedale terrier, terrier
@@ -10,25 +10,25 @@ american eskimo dog (standard), non-sporting
 american eskimo dog (toy), toy
 american foxhound, hound
 american hairless terrier, terrier
-american leopard hound, ???
+american leopard hound, fss
 american staffordshire terrier, terrier
 american water spaniel, sporting
 anatolian shepherd dog, working
-appenzeller sennenhunde, ???
+appenzeller sennenhunde, ffs
 australian cattle dog, herding
 australian shepherd, herding
 australian terrier, terrier
-azawakh, sighthound
-barbet, ???
+azawakh, sighthound (ffs?)
+barbet, ffs
 basenji, hound
-basset fauve de bretagne, ???
+basset fauve de bretagne, ffs
 basset hound, hound
 bavarian mountain scent hound, ???
 beagle, hound
 bearded collie, herding
 beauceron, herding
 bedlington terrier, terrier
-belgian laekenois, ???
+belgian laekenois, ffs
 belgian malinois, herding
 belgian sheepdog, herding
 belgian tervuren, herding
@@ -36,13 +36,13 @@ bergamasco sheepdog, herding
 berger picard, herding
 bernese mountain dog, working
 bichon frise, non-sporting
-biewer terrier, ???
+biewer terrier, ffs
 black and tan coonhound, hound
 black russian terrier, working
 bloodhound, hound
 bluetick coonhound, hound
 boerboel, working
-bolognese, ???
+bolognese, ffs
 border collie, herding
 border terrier, terrier
 borzoi, hound
