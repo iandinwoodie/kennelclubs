@@ -10,7 +10,6 @@ filtered_breed_list = []
 for breed in raw_breed_list.find_all('option'):
     if breed['value'] != '':
         filtered_breed_list.append(breed.text)
-print(filtered_breed_list)
 repo_dir = os.path.split(os.path.dirname(os.path.realpath(__file__)))[0]
 outfile = os.path.join(repo_dir, 'data', 'akc.json')
 with open(outfile, 'w') as ofile:
