@@ -11,7 +11,7 @@ def fetch_data(data_dir):
     selection = soup.find(id='LstBreeds')
     with open(os.path.join(data_dir, 'ankc.csv'), 'w') as outfile:
         wr = csv.writer(outfile, lineterminator='\n')
-        for breed in selection.find_all('a'):
+        for breed in selection.find_all(class_='custom-padding-left-20 title'):
             wr.writerow([breed.text])
 
 
