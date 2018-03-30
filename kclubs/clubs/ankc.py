@@ -5,7 +5,8 @@ import requests
 
 
 def fetch_data(data_dir):
-    page = requests.get('http://ankc.org.au/Breed/Index/')
+    page = requests.get(
+        'http://ankc.org.au/Breed/Index/0?Search.ItemsPerPage=0')
     soup = BeautifulSoup(page.text, 'html.parser')
     selection = soup.find(id='LstBreeds')
     with open(os.path.join(data_dir, 'ankc.csv'), 'w') as outfile:
