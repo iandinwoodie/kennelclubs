@@ -3,15 +3,20 @@ from clubs import ankc
 from clubs import ckc
 from clubs import kc
 from clubs import ukc
+import multiprocessing as mp
 import os
 
 
 def fetch_all_data(data_dir):
-    akc.fetch_data(data_dir)
-    ankc.fetch_data(data_dir)
-    ckc.fetch_data(data_dir)
-    kc.fetch_data(data_dir)
-    ukc.fetch_data(data_dir)
+    processes = [
+        mp.Process(target=akc.fetch_data, args=(data_dir,)),
+        mp.Process(target=ankc.fetch_data, args=(data_dir,)),
+        mp.Process(target=ckc.fetch_data, args=(data_dir,)),
+        mp.Process(target=kc.fetch_data, args=(data_dir,)),
+        mp.Process(target=ukc.fetch_data, args=(data_dir,))
+    ]
+    for p in processes:
+        p.start()
 
 
 if __name__ == '__main__':
