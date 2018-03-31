@@ -14,7 +14,7 @@ def fetch_data(data_dir):
         for linenum, breed in enumerate(selection.find_all(class_='custom-padding-left-20 title')):
             if not linenum:
                 wr.writerow(['breed'])
-            wr.writerow([breed.text])
+            wr.writerow([breed.text.rstrip()])
 
 
 if __name__ == '__main__':
