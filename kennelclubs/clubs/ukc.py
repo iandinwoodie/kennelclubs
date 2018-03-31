@@ -9,8 +9,10 @@ def fetch_data(data_dir):
     soup = BeautifulSoup(page.text, 'html.parser')
     selection = soup.find(id='dog_breed_jumplist')
     with open(os.path.join(data_dir, 'ukc.csv'), 'w') as outfile:
-        wr = csv.writer(outfile, lineterminator='\n')
-        for breed in selection.find_all('option'):
+        wr = csv.writer(outfile, lineterminator=',\n')
+        for linenum, breed in enumerate(selection.find_all('option')):
+            if not linenum:
+                wr.writerow(['breed'])
             if breed['value'] != '':
                 wr.writerow([breed.text])
 

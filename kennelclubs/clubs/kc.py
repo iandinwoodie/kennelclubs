@@ -10,8 +10,10 @@ def fetch_data(data_dir):
     soup = BeautifulSoup(page.text, 'html.parser')
     selection = soup.find(id='MainContent_BreedListFront')
     with open(os.path.join(data_dir, 'kc.csv'), 'w') as outfile:
-        wr = csv.writer(outfile, lineterminator='\n')
-        for breed in selection.find_all('a'):
+        wr = csv.writer(outfile, lineterminator=',\n')
+        for linenum, breed in enumerate(selection.find_all('a')):
+            if not linenum:
+                wr.writerow(['breed'])
             wr.writerow([breed.text])
 
 

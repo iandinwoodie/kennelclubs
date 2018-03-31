@@ -10,8 +10,10 @@ def fetch_data(data_dir):
     soup = BeautifulSoup(page.text, 'html.parser')
     selection = soup.find(id='LstBreeds')
     with open(os.path.join(data_dir, 'ankc.csv'), 'w') as outfile:
-        wr = csv.writer(outfile, lineterminator='\n')
-        for breed in selection.find_all(class_='custom-padding-left-20 title'):
+        wr = csv.writer(outfile, lineterminator=',\n')
+        for linenum, breed in enumerate(selection.find_all(class_='custom-padding-left-20 title')):
+            if not linenum:
+                wr.writerow(['breed'])
             wr.writerow([breed.text])
 
 

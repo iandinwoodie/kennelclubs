@@ -9,8 +9,10 @@ def fetch_data(data_dir):
     soup = BeautifulSoup(page.text, 'html.parser')
     selection = soup.find(id='combobox')
     with open(os.path.join(data_dir, 'ckc.csv'), 'w') as outfile:
-        wr = csv.writer(outfile, lineterminator='\n')
-        for breed in selection.find_all('option'):
+        wr = csv.writer(outfile, lineterminator=',\n')
+        for linenum, breed in enumerate(selection.find_all('option')):
+            if not linenum:
+                wr.writerow(['breed'])
             wr.writerow([breed.text])
 
 
