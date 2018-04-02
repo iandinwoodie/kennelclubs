@@ -3,6 +3,7 @@ from clubs import ankc
 from clubs import ckc
 from clubs import kc
 from clubs import ukc
+from clubs import kusa
 import multiprocessing as mp
 import os
 
@@ -13,7 +14,8 @@ def fetch_all_data(data_dir):
         mp.Process(target=ankc.fetch_data, args=(data_dir,)),
         mp.Process(target=ckc.fetch_data, args=(data_dir,)),
         mp.Process(target=kc.fetch_data, args=(data_dir,)),
-        mp.Process(target=ukc.fetch_data, args=(data_dir,))
+        mp.Process(target=ukc.fetch_data, args=(data_dir,)),
+        mp.Process(target=kusa.fetch_data, args=(data_dir,))
     ]
     for p in processes:
         p.start()
