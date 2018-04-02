@@ -14,7 +14,7 @@ def fetch_data(data_dir):
         soup = BeautifulSoup(page.text, 'html.parser')
         selection = soup.find(id='adminForm')
         for linenum, breed in enumerate(selection.find_all('a')):
-                breeds.append(breed.text)
+                breeds.append(breed.text.lstrip())
     with open(os.path.join(data_dir, 'kusa.csv'), 'w') as outfile:
         wr = csv.writer(outfile, lineterminator=',\n')
         for linenum, breed in enumerate(breeds):
