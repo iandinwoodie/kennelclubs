@@ -5,6 +5,7 @@ python:
 
 install:
   - pip install bs4
+  - pip install requests
 
 script:
   - python kennelclubs/kennelclubs.py
