@@ -1,4 +1,7 @@
 language: python
 
+install:
+  - pip install bs4
+
 script:
   - python kennelclubs/kennelclubs.py
